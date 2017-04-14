@@ -1,4 +1,4 @@
-from flaskr.model import User
+from flaskr.auth.model import User
 
 
 class UserService(object):
