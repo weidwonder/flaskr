@@ -6,5 +6,12 @@ main = Blueprint('main', __name__)
 @main.route('/')
 @login_required
 def index():
-    user_info = jsonify(current_user)
-    return render_template('index.html', user=user_info)
+    return render_template('index.html', user=current_user)
+
+@main.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html')
+
+@main.errorhandler(500)
+def internal_error(error):
+    return render_template('500.html')

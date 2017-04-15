@@ -2,6 +2,8 @@
 
 {% block page_content %}
 <div class="row">
-    <h1>Welcome!</h1>
+    <h1>你好!{{ user.username }}</h1>
+    <p>邮箱：{{ user.email }}</p>
+    <p>介绍：{{ user.description }}</p>
 </div>
 {% endblock %}
